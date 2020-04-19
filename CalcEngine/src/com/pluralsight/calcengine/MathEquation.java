@@ -3,8 +3,15 @@ package com.pluralsight.calcengine;
 public class MathEquation {
     private double leftVal;
     private double rightVal;
-    private char opCode;
+    private char opCode = 'a';
     private double result;
+
+    // ADDING CONSTRUCTORS:
+    public MathEquation(char opCode) {
+        this.opCode = opCode;
+    }
+
+    
 
     // GETTER METHODS:
     public double getLeftVal() {
