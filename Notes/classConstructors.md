@@ -101,10 +101,10 @@ public class Flight {
 1. Objects should be created in some useful state.
 2. Field initializers provide initial values at time of declaration.
 3. Every class has one constructor, If there is not explicit, then there is a default.
-4. It's possible to create multiple constructors with different parameters to cover how might an instance be created.
+4. It's possible to create multiple constructors with different parameters to cover how might an instance be created. This is called **Overloading**.
 5. One constructor may call another, but, it must be the first line.
 6. Initialization blocks share code across constructors.
 7. Keep initialization order in mind when instanciating a class object.
    * Field initialization.
    * Initialization block.
-   * Constructor(s). 
+   * Constructor(s).
