@@ -1,5 +1,6 @@
 package com.pluralsight.calcengine;
 
+// THIS IS A CLASS OF MATHEQUATION.
 public class MathEquation {
     private double leftVal;
     private double rightVal;
@@ -7,13 +8,21 @@ public class MathEquation {
     private double result;
 
     // ADDING CONSTRUCTORS:
+    // You need a different constructor, with varying parameters, for every condition this class would be created.
+    // Once a creator with a parameter is created, you also will need to explicitly write out the default constructor.
+    public MathEquation() {}
+
     public MathEquation(char opCode) {
         this.opCode = opCode;
     }
 
-    
+    public MathEquation(char opCode, double leftVal, double rightVal ) {
+        this(opCode); // This calls the above constructor with only opCode as a parameter.
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+    }
 
-    // GETTER METHODS:
+    // ACCESSOR/GETTER METHODS:
     public double getLeftVal() {
         return leftVal;
     }
@@ -30,7 +39,7 @@ public class MathEquation {
         return result;
     }
 
-    // SETTER METHODS:
+    // MUTATOR/SETTER METHODS:
     public void setLeftVal(double leftVal){
         this.leftVal = leftVal;
     }
@@ -42,6 +51,9 @@ public class MathEquation {
     public void setOpCode( char opCode ) {
         this.opCode = opCode;
     }
+
+
+
 
     public void execute() {
         switch (opCode) {
