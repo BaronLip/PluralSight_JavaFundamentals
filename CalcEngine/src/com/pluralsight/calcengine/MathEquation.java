@@ -54,6 +54,23 @@ public class MathEquation {
 
 
 
+    // OVERLOAD METHODS:
+    public void execute( double leftVal, double rightVal ) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+
+        execute();
+    }
+
+    // A separate method so that the result is cast into an int value.
+    public void execute( int leftVal, int rightVal ) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+
+        execute();
+        //
+        result = (int)result;
+    }
 
     public void execute() {
         switch (opCode) {

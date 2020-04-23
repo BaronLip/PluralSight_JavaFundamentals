@@ -34,6 +34,8 @@ these data types are built into the language
 * Boolean - True or False values.
 	* boolean iLoveJava = true;
 
+* String - Multiple character value.
+
 
 #### Stored By Value:
 Each variable has it's own copy of the value. When assigning on variable the value of another variable, a copy of the value is made. If the first variables value changes, the second remains at it's initial assignment.

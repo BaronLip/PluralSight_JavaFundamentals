@@ -20,16 +20,34 @@ public class Main {
             System.out.print("results = ");
             System.out.println(equation.getResult());
         }
+
+        System.out.println();
+        System.out.println("Using overloads");
+        System.out.println();
+
+        double leftDouble = 9.0d;
+        double rightDouble = 4.0d;
+        int leftInt = 9;
+        int rightInt = 4;
+
+        MathEquation equationOverload = new MathEquation('d');
+
+        // Executing with doubles and ints.
+        // When passing ints into the execute method with parameters set as doubles, it still works. However, the values are "widened". The return value will be a double.
+        equationOverload.execute( leftDouble, rightDouble );
+        System.out.print("result=");
+        System.out.println(equationOverload.getResult());
+
+        // It's better to create a separate overload method that handles the specific data-type.
+        equationOverload.execute( leftInt, rightInt );
+        System.out.print("result=");
+        System.out.println(equationOverload.getResult());
+
+        // When running this, a double cannot be passed and converted to an int.
+        // So, Java will choose the next acceptable overload that will accept both parameters.
+        equationOverload.execute( (double)leftInt, rightInt );
+        System.out.print("result=");
+        System.out.println(equationOverload.getResult());
     }
-//      THE CREATE METHOD IS NO LONGER NEEDED SINCE CONSTRUCTORS ARE IN MATHEQUATION CLASS.
-//    public static MathEquation create (double leftVal, double rightVal, char opCode) {
-//         MathEquation equation = new MathEquation();
-//
-//         equation.setLeftVal(leftVal);
-//         equation.setRightVal(rightVal);
-//         equation.setOpCode(opCode);
-//
-//         return equation;
-//    }
 }
 

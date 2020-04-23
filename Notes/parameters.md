@@ -41,6 +41,57 @@ Flight val2 = new Flight(20);
 * Each constructor or method must have a unique signature, made of 3 parts.
     1. Number of parameters.
     2. Type of parameters.
-    3. Name. 
+    3. Name.
+* When chaining overload methods:
+    1. The order doesn't matter. It does not have to be the first line.
+    2. You may call another version of the method.  
 
 ### Variable number of parameters
+**What if we don't know how many parameters are needed when calling a method?**
+* Methods can be declared to accept a varying number of parameter values.
+* Similar to the spread operator `...`, use `...` "ellipse" after the parameter name.
+  * `Passenger...` instead of an array `Passenger[]`.
+* **Must be the last parameter**.
+
+```Java
+public class Flight {
+    // abridged for brevity.
+    public void addPassenger ( Passenger... list ){
+        if (hasSeating(list.length)) {
+            passengers += list.length;
+            
+            for ( Passenger passenger : list ) {
+                totalCheckedBags += passenger.getCheckedBags();
+            }
+        }
+        else 
+        {
+            handleTooMany();
+        }
+    }
+
+    private boolean hasSeating(int count) {
+        return passenger + count <= seats;
+    }
+}
+
+Flight f = new Flight();
+
+Passenger janet = new Passenger(0, 1);
+Passenger john = new Passenger(0, 2);
+// Without `...` the method parameters look like this.
+f.addPassengers( new Passenger[] { janet, john } );
+// With `...` method parameters look like this.
+f.addPassengers( janet, john );
+```
+
+### Key Points:
+1. Parameters are immutable.
+   * Changes made to passed value are not visible outside of method.
+3. A class may have multiple constructors.
+   * Each must have a unique signature.
+   * Signature is made up of name, number of parameters type of parameters.
+4. A method can be declared with varying number of parameters.
+   * Values must be received as an array.
+   * Must be last parameter.
+
