@@ -172,8 +172,14 @@ f3.getSeats(); // => 12
 
 
 ### Object equality:
+* Both `equals` & `==` is a reference equality operator. It asks "Does item on the left point to the same item on the right of the operator?"
+*  
 ```Java
 Flight f1 = new Flight(175);
+Flight f2 = new Flight(175);
+
+// f1 == f2 ? => false
+// f1.equals(f2) => false
 ```
 
 

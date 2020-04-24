@@ -2,7 +2,8 @@
 
 ```Java
 public class Flight {
-
+    private int flightNumber;
+    private int flightClass;
 	private int passengers;
 	private int seats = 150;
 		
